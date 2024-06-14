@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
+    <title>{{product.name}}</title>
 </head>
-
 <body>
-    <h1>Product list</h1>
+    <h1><title>{{product.name}}</title></h1>
     <ul>
-        {% for product in products %}
+        {% for product in product %}
         <li>
             <h2>{{product.name}}</h2>
             <p> {{product.description}} </p>
-            <p>Price: {{product.price}}</p>
+            <p>Price: Ksh.{{product.price}}</p>
             <img src="{{product.image.url}}" alt="{{product.name}}">
             <p>Available: {{product.available|yesno:"Yes,No"}}</p>
+
         </li>
-        {% endfor %}
     </ul>
 </body>
-
 </html>
